@@ -3,7 +3,7 @@ import brownie
 from brownie import VotingContract
 import random
 from random import randint
-from Crypto.Random import get_random_bytes
+from secrets import token_bytes
 from tinyec import registry
 import tinyec.ec as ec
 import hashlib
@@ -98,7 +98,7 @@ def decrypt(C1, C2, G, x):
 
 
 def genkey(G, n):
-    x = int.from_bytes(get_random_bytes(32), "big") % n
+    x = int.from_bytes(token_bytes(32), "big") % n
     y = x * G
     return x, y
 

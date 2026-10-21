@@ -12,8 +12,10 @@ Clone the repository and install the dependencies:
 
 ```shell
 git clone https://github.com/trizin/homomorphic-on-chain-voting.git
-pip install eth-brownie tinyec pycrypto
+pip install eth-brownie tinyec
 ```
+
+Use an isolated Python environment compatible with your Brownie version. The script uses Python 3.6+'s standard-library `secrets.token_bytes` for its 32-byte key-generation input; the obsolete PyCrypto package is not required. This is not a complete dependency lock or a security audit of the voting prototype.
 
 To experience the magic, simply execute the command:
 
